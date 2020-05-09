@@ -6,6 +6,8 @@
 
 module.exports = {
   /* Your site config here */
+  siteMetadata: {
+  },
   plugins: [
     `gatsby-plugin-typescript`,
     `gatsby-plugin-emotion`,
