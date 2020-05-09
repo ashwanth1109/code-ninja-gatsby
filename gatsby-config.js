@@ -6,16 +6,5 @@
 
 module.exports = {
   /* Your site config here */
-  siteMetadata: {
-  },
-  plugins: [
-    `gatsby-plugin-typescript`,
-    `gatsby-plugin-emotion`,
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
-    },
-  ],
+  plugins: [`gatsby-plugin-typescript`, `gatsby-plugin-emotion`],
 }

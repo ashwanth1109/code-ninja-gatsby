@@ -17,7 +17,7 @@ const Container = styled.div`
 
 const NotificationBar = () => {
   return (
-    <Container className="pad-h df a-center">
+    <Container className="pad-h df a-center font-s">
       <span>Check out the CodeNinja youtube channel&nbsp;</span>
       <a>here</a>
     </Container>
