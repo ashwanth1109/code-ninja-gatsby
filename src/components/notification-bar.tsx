@@ -6,9 +6,9 @@ const Container = styled.div`
   width: 100%;
   height: 40px;
   background: ${purple.C70};
-  color: ${white};
+  color: ${white.C80};
   a {
-    color: white;
+    color: ${white.C100};
     text-shadow: none;
     text-decoration: underline;
     cursor: pointer;

@@ -10,4 +10,7 @@ export const purple = {
   C90: `#362066`,
 }
 
-export const white = "#fff"
+export const white = {
+  C80: "#fffc",
+  C100: "#fff",
+}
