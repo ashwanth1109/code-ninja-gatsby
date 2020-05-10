@@ -1,5 +1,6 @@
-import React from "react"
+import React, { useContext } from "react"
 import styled from "@emotion/styled"
+import ThemeContext from "../context/theme"
 
 const Container = styled.div`
   width: 280px;
@@ -17,7 +18,16 @@ const Container = styled.div`
 `
 
 const Sidenav = () => {
-  return <Container className="pad-h">Sidenav</Container>
+  const { theme } = useContext(ThemeContext)
+
+  return (
+    <Container
+      className="pad-h bg-transition"
+      style={{ background: theme.background, color: theme.text }}
+    >
+      Sidenav
+    </Container>
+  )
 }
 
 export default Sidenav

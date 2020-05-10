@@ -1,22 +1,31 @@
-import React from "react"
+import React, { useContext } from "react"
 import styled from "@emotion/styled"
-import Logo from "../../static/logo.png"
+import Logo from "../icons/logo"
 import Search from "../icons/search"
-import { purple } from "../styles/colors"
+import { purple, white } from "../styles/colors"
+import ThemeButton from "./theme-button"
+import ThemeContext from "../context/theme"
 
-const Container = styled.div`
+const Container = styled.div<{ divider: string }>`
   width: 100%;
   height: 64px;
   position: relative;
   &:after {
-    background-color: #f0f0f2;
+    background: ${props => props.divider};
+    transition: 0.5s ease-in-out background;
     bottom: 0rem;
     content: "";
     height: 1px;
     left: 0rem;
     position: absolute;
     right: 0rem;
-    z-index: -1;
+  }
+`
+
+const LogoContainer = styled.div`
+  margin-right: 8px;
+  svg {
+    height: 44px;
   }
 `
 
@@ -32,8 +41,13 @@ const Section = styled.div`
   }
 `
 
-const SearchBar = styled.input`
-  background: whitesmoke;
+const SearchBar = styled.input<{
+  backgroundAccent: string
+  text: string
+  primary: string
+}>`
+  background: ${props => props.backgroundAccent};
+  color: ${props => props.text};
   width: 100%;
   max-width: 400px;
   height: 40px;
@@ -43,16 +57,14 @@ const SearchBar = styled.input`
   font-size: 1rem;
   line-height: 2.25rem;
   padding: 0 16px 0 40px;
+  transition: 0.1s ease-in-out box-shadow, 0.5s ease-in-out background;
 
   :focus {
-    background: white;
-    -webkit-box-shadow: inset 0px 0px 0px 2px ${purple.C40};
-    -moz-box-shadow: inset 0px 0px 0px 2px ${purple.C40};
-    box-shadow: inset 0px 0px 0px 2px ${purple.C40};
+    -webkit-box-shadow: inset 0px 0px 0px 2px ${props => props.primary};
+    -moz-box-shadow: inset 0px 0px 0px 2px ${props => props.primary};
+    box-shadow: inset 0px 0px 0px 2px ${props => props.primary};
   }
 `
-
-const ThemeButton = styled.div``
 
 const SearchContainer = styled.div`
   max-width: 400px;
@@ -71,25 +83,47 @@ const IconContainer = styled.div`
   }
 `
 
+const ThemeButtonContainer = styled.div`
+  width: 50px;
+  height: 50px;
+  margin-left: 16px;
+`
+
 const Header = () => {
+  const { theme } = useContext(ThemeContext)
+
   return (
-    <Container className="pad-h df j-between">
+    <Container
+      className="pad-h df j-between bg-transition"
+      style={{ backgroundColor: theme.background, color: theme.text }}
+      divider={theme.divider}
+    >
       <Section className="df a-center">
-        <img src={Logo} alt="A dog smiling in a party hat" />
+        <LogoContainer>
+          <Logo
+            primary={theme.isDark ? purple.C50 : purple.C70}
+            accent={theme.isDark ? purple.C90 : white.C100}
+          />
+        </LogoContainer>
         <h1 className="font-s">Code Ninja</h1>
       </Section>
       <Section className="df a-center flex j-end">
         <SearchContainer className="relative">
           <IconContainer className="df a-center j-center">
-            <Search />
+            <Search fill={theme.text} />
           </IconContainer>
           <SearchBar
             type="text"
-            placeholder="Search for tags"
-            className="flex"
+            placeholder="Search for posts"
+            className="flex bg-transition"
+            backgroundAccent={theme.backgroundAccent}
+            text={theme.text}
+            primary={theme.primary}
           />
         </SearchContainer>
-        <ThemeButton />
+        <ThemeButtonContainer className="df a-center j-center">
+          <ThemeButton />
+        </ThemeButtonContainer>
       </Section>
     </Container>
   )

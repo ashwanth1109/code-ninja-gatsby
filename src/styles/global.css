@@ -4,7 +4,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  overflow-y: hidden !important;
   font-family: "Open Sans", sans-serif;
 }
 
@@ -64,4 +63,12 @@ body {
 
 .no-overflow {
   overflow: hidden;
+}
+
+.day {
+  background: #fff;
+}
+
+.bg-transition {
+  transition: 0.5s ease-in-out background, color;
 }

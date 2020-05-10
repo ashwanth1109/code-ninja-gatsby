@@ -1,11 +1,12 @@
-import React from "react"
+import React, { useContext } from "react"
 import styled from "@emotion/styled"
-import { purple, white } from "../styles/colors"
+import { white } from "../styles/colors"
+import ThemeContext from "../context/theme"
 
 const Container = styled.div`
   width: 100%;
   height: 40px;
-  background: ${purple.C70};
+  font-size: 1rem;
   color: ${white.C80};
   a {
     color: ${white.C100};
@@ -16,8 +17,13 @@ const Container = styled.div`
 `
 
 const NotificationBar = () => {
+  const { theme } = useContext(ThemeContext)
+
   return (
-    <Container className="pad-h df a-center font-s">
+    <Container
+      className="pad-h df a-center font-s bg-transition"
+      style={{ background: theme.notification }}
+    >
       <span>Check out the CodeNinja youtube channel&nbsp;</span>
       <a>here</a>
     </Container>
