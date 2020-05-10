@@ -23,9 +23,9 @@ const Container = styled.div<{ divider: string }>`
 `
 
 const LogoContainer = styled.div`
-  margin-right: 8px;
   svg {
-    height: 44px;
+    height: 38px;
+    margin-top: 4px;
   }
 `
 
@@ -37,7 +37,8 @@ const Section = styled.div`
   }
 
   h1 {
-    margin-left: 8px;
+    font-size: 1rem;
+    margin-left: 16px;
   }
 `
 
