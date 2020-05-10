@@ -1,4 +1,10 @@
-# 001. Basics of RxJS
+---
+title: "Introduction to Reactive Programming"
+classification: ["Reactive"]
+tags: ["ANGULAR", "RX-JS", "THEORY"]
+level: 100
+date: "2020-05-10"
+---
 
 Since I've started working with Angular, `RxJS` has been one of those things that's baffled me and amazed me at the same
 time. Being habituated to imperative programming for the better part of my life as a programmer and thinking in Reactive
