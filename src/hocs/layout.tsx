@@ -8,7 +8,6 @@ import NotificationBar from "../components/notification-bar"
 const Layout = ({ children }: { children: JSX.Element }) => {
   const size: WindowSize = useWindowSize()
 
-  console.log(size)
   return (
     <div className="df col window-size no-overflow">
       <NotificationBar />

@@ -61,8 +61,7 @@ const Label = styled.label`
 `
 
 const ThemeButton = () => {
-  const { toggleTheme, theme } = useContext(ThemeContext)
-  console.log(theme)
+  const { toggleTheme } = useContext(ThemeContext)
 
   return (
     <Label>
