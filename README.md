@@ -1,8 +1,8 @@
 # Code Ninja
 
-Framework: Gatsby
+Static Generator: Gatsby
 
-Storage: S3
+Hosting: S3
 
 DNS: Route 53
 
