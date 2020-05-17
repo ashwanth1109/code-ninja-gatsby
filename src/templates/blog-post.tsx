@@ -4,7 +4,20 @@ import { graphql } from "gatsby"
 import styled from "@emotion/styled"
 import { Node } from "../types/node"
 
-const Title = styled.div``
+const Title = styled.h1`
+  margin: 32px 0;
+  font-size: 2.4rem;
+`
+
+const Body = styled.div`
+  p {
+    margin: 16px 0;
+  }
+  h3 {
+    margin: 32px 0 16px 0;
+    font-size: 1.6rem;
+  }
+`
 
 type Props = {
   data: {
@@ -19,7 +32,7 @@ const BlogPost = ({ data }: Props) => {
     <Container>
       <div>Breadcrumb</div>
       <Title>{post.frontmatter.title}</Title>
-      <div dangerouslySetInnerHTML={{ __html: post.html }} />
+      <Body dangerouslySetInnerHTML={{ __html: post.html }} />
     </Container>
   )
 }
