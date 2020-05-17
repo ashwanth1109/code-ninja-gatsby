@@ -7,13 +7,11 @@ export interface ThemeControl {
 }
 
 export function useTheme(): ThemeControl {
-  const [theme, setTheme] = useState(
-    localStorage.getItem("dark") === "true" ? themes.dark : themes.light
-  )
+  const [theme, setTheme] = useState(themes.light)
 
   useLayoutEffect(() => {
-    /* const val = localStorage.getItem("dark")
-    if (val === "true") setTheme(themes.dark)*/
+    const val = localStorage.getItem("dark")
+    if (val === "true") setTheme(themes.dark)
   }, [])
 
   const toggleTheme = useCallback(() => {
