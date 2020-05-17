@@ -6,6 +6,6 @@ Storage: S3
 
 DNS: Route 53
 
-Distribution: Cloudfront
+CDN: Cloudfront
 
 CD: Travis
