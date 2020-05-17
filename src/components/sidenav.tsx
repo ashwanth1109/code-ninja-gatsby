@@ -4,6 +4,7 @@ import ThemeContext from "../context/theme"
 
 const Container = styled.div`
   width: 280px;
+  max-width: 280px;
   position: relative;
   &:after {
     background-color: #f0f0f2;
@@ -18,11 +19,11 @@ const Container = styled.div`
 `
 
 const Sidenav = () => {
-  const { theme, allowThemeAnimate } = useContext(ThemeContext)
+  const { theme } = useContext(ThemeContext)
 
   return (
     <Container
-      className={`pad-h ${allowThemeAnimate ? "bg-transition" : ""}`}
+      className="pad-h"
       style={{ background: theme.background, color: theme.text }}
     >
       Sidenav
