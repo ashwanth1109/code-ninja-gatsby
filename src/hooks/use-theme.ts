@@ -7,7 +7,7 @@ export interface ThemeControl {
 }
 
 export function useTheme(): ThemeControl {
-  const [theme, setTheme] = useState(themes.dark)
+  const [theme, setTheme] = useState(themes.light)
 
   useLayoutEffect(() => {
     const val = localStorage.getItem("dark")
