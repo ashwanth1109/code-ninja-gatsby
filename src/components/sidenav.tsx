@@ -16,7 +16,7 @@ const Sidenav = () => {
       className="pad-h"
       style={{ background: theme.background, color: theme.text }}
     >
-      Sidenav
+      Temp sidenav
     </Container>
   )
 }
