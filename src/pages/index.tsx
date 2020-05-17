@@ -2,8 +2,9 @@ import React, { Fragment } from "react"
 import styled from "@emotion/styled"
 
 import Container from "../hocs/container"
-import getFiles from "../graphql/get-files"
 import PostItem from "../components/post-item"
+import { graphql } from "gatsby"
+import { Node } from "../types/node"
 
 const Greeting = styled.div`
   font-size: 3rem;
@@ -25,8 +26,18 @@ const SectionTitle = styled.h2`
   line-height: 1.25;
 `
 
-const Index = () => {
-  const data = getFiles()
+type Props = {
+  data: {
+    allMarkdownRemark: {
+      totalCount: number
+      edges: Array<{
+        node: Node
+      }>
+    }
+  }
+}
+
+const Index = ({ data }: Props) => {
 
   return (
     <Container>
@@ -41,12 +52,40 @@ const Index = () => {
       </Introduction>
       <SectionTitle>Latest Posts</SectionTitle>
       <Fragment>
-        {data.map(({ node }) => (
+        {data.allMarkdownRemark.edges.map(({ node }) => (
           <PostItem key={node.id} node={node} />
         ))}
       </Fragment>
     </Container>
   )
 }
+
+export const query = graphql`
+  query {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+      totalCount
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            date(formatString: "DD MMMM, YYYY")
+            level
+            classification
+            tags
+          }
+          fields {
+            slug
+          }
+          excerpt
+          html
+          id
+          tableOfContents
+          timeToRead
+        }
+      }
+    }
+  }
+`
 
 export default Index
