@@ -11,7 +11,7 @@ export function useTheme(): ThemeControl {
 
   useLayoutEffect(() => {
     const val = localStorage.getItem("dark")
-    if (val === "false") setTheme(themes.light)
+    if (val === "true") setTheme(themes.dark)
   }, [])
 
   const toggleTheme = useCallback(() => {
