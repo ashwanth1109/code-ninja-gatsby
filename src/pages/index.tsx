@@ -38,6 +38,7 @@ type Props = {
 }
 
 const Index = ({ data }: Props) => {
+  if (typeof window === "undefined") return null
 
   return (
     <Container>
