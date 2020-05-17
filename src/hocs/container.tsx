@@ -14,10 +14,10 @@ const PageSection = styled.div`
 `
 
 const Container = ({ children }: Props) => {
-  const { theme, toggleTheme, allowThemeAnimate } = useTheme()
+  const { theme, toggleTheme } = useTheme()
 
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme, allowThemeAnimate }}>
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
       <Layout>
         <PageSection>{children}</PageSection>
       </Layout>
