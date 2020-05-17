@@ -4,7 +4,6 @@ import { purple, white } from "../styles/colors"
 import ThemeContext from "../context/theme"
 
 // Reference: https://codepen.io/aaroniker/pen/KGpXZo
-
 const Label = styled.label`
   cursor: pointer;
   input {
@@ -36,10 +35,9 @@ const Label = styled.label`
         position: absolute;
         top: 50%;
         left: 50%;
-        box-shadow: 0 -23px 0 ${purple.C70}, 0 23px 0 ${purple.C70},
-          23px 0 0 ${purple.C70}, -23px 0 0 ${purple.C70},
-          15px 15px 0 ${purple.C70}, -15px 15px 0 ${purple.C70},
-          15px -15px 0 ${purple.C70}, -15px -15px 0 ${purple.C70};
+        box-shadow: 0 -23px 0 ${purple}, 0 23px 0 ${purple}, 23px 0 0 ${purple},
+          -23px 0 0 ${purple}, 15px 15px 0 ${purple}, -15px 15px 0 ${purple},
+          15px -15px 0 ${purple}, -15px -15px 0 ${purple};
         transform: scale(0);
         transition: all 0.3s ease;
       }
@@ -49,7 +47,7 @@ const Label = styled.label`
       transform: scale(0.5) rotate(0deg);
       transition: transform 0.3s ease 0.1s, box-shadow 0.2s ease 0s;
       &:before {
-        background: ${purple.C70};
+        background: ${purple};
         transition: background 0.3s ease 0.1s;
       }
       &:after {

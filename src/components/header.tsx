@@ -2,7 +2,7 @@ import React, { useContext } from "react"
 import styled from "@emotion/styled"
 import Logo from "../icons/logo"
 import Search from "../icons/search"
-import { purple, white } from "../styles/colors"
+import { black, purple, white } from "../styles/colors"
 import ThemeButton from "./theme-button"
 import ThemeContext from "../context/theme"
 
@@ -12,7 +12,6 @@ const Container = styled.div<{ divider: string }>`
   position: relative;
   &:after {
     background: ${props => props.divider};
-    transition: 0.5s ease-in-out background;
     bottom: 0rem;
     content: "";
     height: 1px;
@@ -58,7 +57,6 @@ const SearchBar = styled.input<{
   font-size: 1rem;
   line-height: 2.25rem;
   padding: 0 16px 0 40px;
-  transition: 0.1s ease-in-out box-shadow, 0.5s ease-in-out background;
 
   :focus {
     -webkit-box-shadow: inset 0px 0px 0px 2px ${props => props.primary};
@@ -95,15 +93,15 @@ const Header = () => {
 
   return (
     <Container
-      className="pad-h df j-between bg-transition"
+      className={`pad-h df j-between`}
       style={{ backgroundColor: theme.background, color: theme.text }}
       divider={theme.divider}
     >
       <Section className="df a-center">
         <LogoContainer>
           <Logo
-            primary={theme.isDark ? purple.C50 : purple.C70}
-            accent={theme.isDark ? purple.C90 : white.C100}
+            primary={purple}
+            accent={theme.isDark ? black.C80 : white.C100}
           />
         </LogoContainer>
         <h1 className="font-s">Code Ninja</h1>
@@ -116,7 +114,7 @@ const Header = () => {
           <SearchBar
             type="text"
             placeholder="Search for posts"
-            className="flex bg-transition"
+            className="flex"
             backgroundAccent={theme.backgroundAccent}
             text={theme.text}
             primary={theme.primary}

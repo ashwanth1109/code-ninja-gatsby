@@ -25,7 +25,7 @@ const Page = ({ children }: { children: JSX.Element }) => {
 
   return (
     <Container
-      className="pad-h flex bg-transition"
+      className={`pad-h flex`}
       style={{
         background: theme.background,
         color: theme.text,

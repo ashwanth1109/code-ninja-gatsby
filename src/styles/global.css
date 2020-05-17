@@ -68,7 +68,3 @@ body {
 .day {
   background: #fff;
 }
-
-.bg-transition {
-  transition: 0.5s ease-in-out background, color;
-}

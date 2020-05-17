@@ -22,7 +22,7 @@ const NotificationBar = () => {
   return (
     <Container
       className="pad-h df a-center font-s bg-transition"
-      style={{ background: theme.notification }}
+      style={{ background: theme.primary }}
     >
       <span>Check out the CodeNinja youtube channel&nbsp;</span>
       <a>here</a>
