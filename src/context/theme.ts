@@ -32,7 +32,6 @@ export const themes: { [key: string]: Theme } = {
 const ThemeContext = React.createContext({
   theme: themes.dark,
   toggleTheme: () => {},
-  allowThemeAnimate: false,
 })
 
 export default ThemeContext
