@@ -34,7 +34,7 @@ depth about using the various operators with code examples so that you can under
 
 ### What are Observables / Data Streams?
 
-![GCP Youtube Channel](images/2020-05-01%2002_52_40-Google%20Cloud%20Platform%20-%20YouTube.png)
+![GCP Youtube Channel](./gcp.png)
 
 Now, let's talk about data streams. A data stream in RxJS is also called an Observable. A data stream is something that
 emits events/data over some time. You can listen to a stream, through a process called subscription, and you can react

@@ -12,6 +12,7 @@ const Title = styled.h1`
 const Body = styled.div`
   p {
     margin: 16px 0;
+    font-size: 1.2rem;
   }
   h3 {
     margin: 32px 0 16px 0;
