@@ -59,11 +59,11 @@ const Label = styled.label`
 `
 
 const ThemeButton = () => {
-  const { toggleTheme } = useContext(ThemeContext)
+  const { toggleTheme, theme } = useContext(ThemeContext)
 
   return (
     <Label>
-      <input type="checkbox" onChange={toggleTheme} />
+      <input type="checkbox" checked={!theme.isDark} onChange={toggleTheme} />
       <div />
     </Label>
   )
