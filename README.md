@@ -7,5 +7,3 @@ Hosting: S3
 DNS: Route 53
 
 CDN: Cloudfront
-
-CD: Travis
