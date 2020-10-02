@@ -48,8 +48,9 @@ const Index = ({ data }: Props) => {
         developer by day, and front-end developer by night. Typescript is my
         language of choice. <br />
         <br /> At work, I use Angular on the frontend and AWS cloud (Amplify,
-        AppSync, DynamoDB, S3 etc.) for real-time serverless backends. Outside
-        of work, I prefer to use React.
+        AppSync, Cloudformation, Cognito, DynamoDB, Lambda, S3 etc.) for
+        real-time serverless backends and deploy pipelines. Outside of work, I
+        prefer to use React.
       </Introduction>
       <SectionTitle>Latest Posts</SectionTitle>
       <Fragment>
